@@ -1,0 +1,22 @@
+{
+  "name": "notes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/segyhp/node-notes.git"
+  },
+  "author": "Segy Hendro Pratama",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/segyhp/node-notes/issues"
+  },
+  "homepage": "https://github.com/segyhp/node-notes#readme",
+  "dependencies": {
+    "lodash": "^4.17.10"
+  }
+}
