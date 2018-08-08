@@ -1,9 +1,4 @@
-console.log('hello the app.js');
-
-const fs = require('fs');
-const os = require('os');
-const notes = require('./notes.js');
-const _ = require('lodash')
+console.log('Starting the app.js');
 
 
 //var res = notes.addNote();
@@ -14,8 +9,8 @@ const _ = require('lodash')
 //console.log(res);
 //console.log(num);
 //var user = os.userInfo();
-
-
+//
+//
 //fs.appendFile('greetings.txt', `Good Morning ${user.username} ! You are ${notes.age}`, function(err){
 //    if(err){
 //        console.log("Unable to write to file!");
@@ -25,9 +20,17 @@ const _ = require('lodash')
 //console.log(_.isString(true));
 //console.log(_.isString('Segy')); 
 //
+//
+//var filteredArray = _.uniq(['Segy','Hendro',2,5,1,1,3])
+//console.log(filteredArray);
+//const os = require('os');
 
-var filteredArray = _.uniq(['Segy', 'Hendro' ,'Segy', 1,2,5,1,1,4,2,3])
-console.log(filteredArray);
+
+const fs = require('fs');
+const notes = require('./notes.js');
+const _ = require('lodash')
 
 
-   
+
+
+ 

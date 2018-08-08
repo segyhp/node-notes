@@ -6,7 +6,7 @@ module.exports.addNote =  function () {
 }
 
 
-module.exports.addNumber = (a,b) => {
-    console.log('a plus b');
-    return a + b;
-}
+//module.exports.addNumber = (a,b) => {
+//    console.log('a plus b');
+//    return a + b;
+//}
