@@ -28,9 +28,23 @@ console.log('Starting the app.js');
 
 const fs = require('fs');
 const notes = require('./notes.js');
-const _ = require('lodash')
+const _ = require('lodash');
 
+var command = process.argv[2];
+console.log("length process " + process.argv.length)
 
+console.log(process.argv)
 
+console.log('Command: ', command)
 
- 
+if (command === 'add') {
+    console.log("Adding new note..")
+} else if (command === 'list') {
+    console.log("Listing all notes..")
+} else if (command === 'read') {
+    console.log("Fetching the notes..")
+} else if (command === 'delete') {
+    console.log("Delete the note..")
+} else {
+    console.log("Command not recognized")
+}
