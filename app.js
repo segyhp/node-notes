@@ -1,4 +1,40 @@
 console.log('Starting the app.js');
+const fs = require('fs');
+const notes = require('./notes.js');
+const yargs = require('yargs');
+const _ = require('lodash');
+
+
+
+var argv = yargs.argv;
+//var command = process.argv[2];
+var command = argv._[0];
+//console.log("length process " + process.argv.length)
+
+//console.log(process.argv)
+
+console.log('Process: ', process.argv)
+console.log("Command yargs ",  argv)
+
+if (command === 'add') {
+    notes.addNote(argv.title, argv.body)
+    
+} else if (command === 'list') {
+        
+    notes.getAll();
+    
+} else if (command === 'read') {
+    
+    notes.readNote(argv.title)
+} else if (command === 'delete') {
+    
+    
+        notes.deleteNote(argv.title)
+    
+} else {
+    console.log("Command not recognized")
+}
+
 
 
 //var res = notes.addNote();
@@ -26,25 +62,4 @@ console.log('Starting the app.js');
 //const os = require('os');
 
 
-const fs = require('fs');
-const notes = require('./notes.js');
-const _ = require('lodash');
 
-var command = process.argv[2];
-console.log("length process " + process.argv.length)
-
-console.log(process.argv)
-
-console.log('Command: ', command)
-
-if (command === 'add') {
-    console.log("Adding new note..")
-} else if (command === 'list') {
-    console.log("Listing all notes..")
-} else if (command === 'read') {
-    console.log("Fetching the notes..")
-} else if (command === 'delete') {
-    console.log("Delete the note..")
-} else {
-    console.log("Command not recognized")
-}
