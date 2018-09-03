@@ -11,7 +11,19 @@ var command = argv._[0];
 console.log('Process: ', process.argv)
 console.log("Command yargs ", argv)
 if (command === 'add') {
-    notes.addNote(argv.title, argv.body)
+    var note = notes.addNote(argv.title, argv.body)
+
+
+    if (note) {
+
+        console.log("Successfully add new notes\n")
+        console.log("Title: " + note.title, '\n')
+        console.log("Body: " + note.body)
+
+    } else {
+        console.log("No new notes added")
+    }
+
 } else if (command === 'list') {
     notes.getAll();
 } else if (command === 'read') {
