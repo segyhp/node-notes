@@ -12,30 +12,31 @@ console.log('Process: ', process.argv)
 console.log("Command yargs ", argv)
 if (command === 'add') {
     var note = notes.addNote(argv.title, argv.body)
-
-
     if (note) {
-
         console.log("Successfully add new notes\n")
-        console.log("Title: " + note.title, '\n')
-        console.log("Body: " + note.body)
-
+        notes.logNote(note)
     } else {
         console.log("No new notes added")
     }
-
 } else if (command === 'list') {
     notes.getAll();
 } else if (command === 'read') {
-    notes.readNote(argv.title)
+    var getNote = notes.readNote(argv.title)
+    
+    if(getNote){
+        console.log("Found a note ")
+        notes.logNote(getNote)
+
+    }
+    
+    else{
+        console.log("No note found")
+    }
+    
 } else if (command === 'delete') {
-    
     var noteRemoved = notes.deleteNote(argv.title)
-    
     var message = noteRemoved ? "Note was removed" : "No note was removed"
-    
     console.log(message)
-    
 } else {
     console.log("Command not recognized")
 }

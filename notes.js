@@ -21,7 +21,7 @@ var addNote = (title, body) => {
     if (duplicateNotes.length === 0) {
         notes.push(note)
         saveNotes(notes);
-        
+
         return note;
     }
 }
@@ -29,16 +29,37 @@ var getAll = () => {
     console.log("Get all the notes")
 }
 var readNote = (title) => {
-    console.log("Read the title : " + title)
+    var notes = fetchNotes();
+    
+    var filteredNotes = notes.filter((note)=> note.title === title)
+    
+    
+    return filteredNotes[0];
+    
 }
 var deleteNote = (title) => {
-    console.log("Delete the note : " + title)
+    
+    var notes = fetchNotes();
+    var filteredNotes = notes.filter((note) => note.title !== title);
+    saveNotes(filteredNotes)
+    
+    return notes.length !== filteredNotes.length
+    
+    
+    //save new notes array
+}
+
+var logNote = (note) => {
+        console.log("------")
+        console.log("Title: " + note.title, '\n')
+        console.log("Body: " + note.body)
 }
 module.exports = {
     addNote,
     getAll,
     readNote,
-    deleteNote
+    deleteNote,
+    logNote
 };
 //module.exports.addNote =  function () {
 //    console.log("add not e.");
