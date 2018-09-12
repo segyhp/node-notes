@@ -50,7 +50,11 @@ var deleteNote = (title) => {
 }
 
 var logNote = (note) => {
-        console.log("------")
+    
+    debugger;
+    //Break on this line and use REPL to output note
+    //use get command with --title
+        console.log("________")
         console.log("Title: " + note.title, '\n')
         console.log("Body: " + note.body)
 }
