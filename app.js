@@ -29,7 +29,13 @@ if (command === 'add') {
 } else if (command === 'read') {
     notes.readNote(argv.title)
 } else if (command === 'delete') {
-    notes.deleteNote(argv.title)
+    
+    var noteRemoved = notes.deleteNote(argv.title)
+    
+    var message = noteRemoved ? "Note was removed" : "No note was removed"
+    
+    console.log(message)
+    
 } else {
     console.log("Command not recognized")
 }
