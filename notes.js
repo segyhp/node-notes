@@ -1,4 +1,3 @@
-console.log('Starting notes.js');
 const fs = require('fs')
 var saveNotes = (notes) => {
     fs.writeFileSync('notes-data.json', JSON.stringify(notes))
@@ -21,42 +20,30 @@ var addNote = (title, body) => {
     if (duplicateNotes.length === 0) {
         notes.push(note)
         saveNotes(notes);
-
         return note;
     }
 }
 var getAll = () => {
-    console.log("Get all the notes")
+    return fetchNotes();
 }
 var readNote = (title) => {
     var notes = fetchNotes();
-    
-    var filteredNotes = notes.filter((note)=> note.title === title)
-    
-    
+    var filteredNotes = notes.filter((note) => note.title === title)
     return filteredNotes[0];
-    
 }
 var deleteNote = (title) => {
-    
     var notes = fetchNotes();
     var filteredNotes = notes.filter((note) => note.title !== title);
     saveNotes(filteredNotes)
-    
     return notes.length !== filteredNotes.length
-    
-    
-    //save new notes array
 }
-
 var logNote = (note) => {
-    
-    debugger;
+    // debugger;
     //Break on this line and use REPL to output note
     //use get command with --title
-        console.log("________")
-        console.log("Title: " + note.title, '\n')
-        console.log("Body: " + note.body)
+    console.log("________")
+    console.log("Title: " + note.title)
+    console.log("Body: " + note.body)
 }
 module.exports = {
     addNote,
@@ -65,11 +52,3 @@ module.exports = {
     deleteNote,
     logNote
 };
-//module.exports.addNote =  function () {
-//    console.log("add not e.");
-//    return "New Note";
-//}
-//module.exports.addNumber = (a,b) => {
-//    console.log('a plus b');
-//    return a + b;
-//}
