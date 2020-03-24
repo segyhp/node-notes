@@ -17,6 +17,15 @@
   },
   "homepage": "https://github.com/segyhp/node-notes#readme",
   "dependencies": {
-    "lodash": "^4.17.10"
+    "git-cz": "^4.3.1",
+    "lodash": "^4.17.15"
+  },
+  "devDependencies": {
+    "cz-conventional-changelog": "^3.1.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
