@@ -18,7 +18,8 @@
   "homepage": "https://github.com/segyhp/node-notes#readme",
   "dependencies": {
     "git-cz": "^4.3.1",
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.15",
+    "validator": "^13.0.0"
   },
   "devDependencies": {
     "cz-conventional-changelog": "^3.1.0"
