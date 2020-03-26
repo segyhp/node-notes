@@ -1,4 +1,5 @@
 const validator = require('validator');
+const chalk = require("chalk");
 
 const fs = require("fs");
 const notes = require('./notes.js');
@@ -7,7 +8,9 @@ const notes = require('./notes.js');
 
 const msg = notes();
 
-console.log();
+console.log(msg);
+
+console.log(chalk.green.bold.bgBlueBright('Success!..'));
 
 console.log(validator.isEmail('email@email.com'));
 console.log(validator.isURL('hehe'));
